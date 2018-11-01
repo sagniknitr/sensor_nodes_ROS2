@@ -1,0 +1,192 @@
+tracks:
+  convert:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc}
+    devel_branch: null
+    name: upstream
+    patches: null
+    release_inc: -1
+    release_tag: :{version}
+    ros_distro: groovy
+    vcs_type: git
+    vcs_uri: git://github.com/ros-planning/random_numbers.git
+    version: :{auto}
+  fuerte:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc}
+    devel_branch: null
+    last_version: 0.1.1
+    name: random_numbers
+    patches: null
+    release_inc: '0'
+    release_tag: :{version}
+    ros_distro: fuerte
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers.git
+    version: :{ask}
+  groovy:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc}
+    devel_branch: master
+    name: upstream_groovy
+    patches: null
+    release_inc: -1
+    release_tag: :{version}
+    ros_distro: groovy
+    vcs_type: git
+    vcs_uri: https://github.com/ros-gbp/random_numbers-release.git
+    version: 0.1.3
+  hydro:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc}
+    devel_branch: master
+    last_version: 0.2.0
+    name: upstream_hydro
+    patches: null
+    release_inc: '0'
+    release_repo_url: null
+    release_tag: :{version}
+    ros_distro: hydro
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers.git
+    version: :{auto}
+  indigo:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc}
+    - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
+      :{release_inc}
+    devel_branch: master
+    last_version: 0.3.0
+    name: upstream_indigo
+    patches: null
+    release_inc: '0'
+    release_repo_url: null
+    release_tag: :{version}
+    ros_distro: indigo
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers
+    version: :{auto}
+  jade:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc}
+    - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
+      :{release_inc}
+    devel_branch: master
+    last_version: 0.3.0
+    name: upstream_indigo
+    patches: null
+    release_inc: '0'
+    release_repo_url: null
+    release_tag: :{version}
+    ros_distro: jade
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers
+    version: :{auto}
+  kinetic:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc} --os-name ubuntu
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc} --os-name debian --os-not-required
+    - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
+      :{release_inc}
+    devel_branch: master
+    last_version: 0.3.1
+    name: upstream
+    patches: null
+    release_inc: '0'
+    release_repo_url: null
+    release_tag: :{version}
+    ros_distro: kinetic
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers
+    version: :{auto}
+  lunar:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc} --os-name ubuntu
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc} --os-name debian --os-not-required
+    - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
+      :{release_inc}
+    devel_branch: master
+    last_version: 0.3.1
+    name: upstream
+    patches: null
+    release_inc: '1'
+    release_repo_url: git@github.com:ros-gbp/random_numbers-release
+    release_tag: :{version}
+    ros_distro: lunar
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers
+    version: 0.3.1
+  melodic:
+    actions:
+    - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
+      :{vcs_uri} --name :{name} --output-dir :{archive_dir_path}
+    - git-bloom-import-upstream :{archive_path} :{patches} --release-version :{version}
+      --replace
+    - git-bloom-generate -y rosrelease :{ros_distro} --source upstream -i :{release_inc}
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc} --os-name ubuntu
+    - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
+      -i :{release_inc} --os-name debian --os-not-required
+    - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
+      :{release_inc}
+    devel_branch: master
+    last_version: 0.3.2
+    name: upstream
+    patches: null
+    release_inc: '0'
+    release_repo_url: git@github.com:ros-gbp/random_numbers-release
+    release_tag: :{version}
+    ros_distro: melodic
+    vcs_type: git
+    vcs_uri: https://github.com/ros-planning/random_numbers
+    version: :{auto}

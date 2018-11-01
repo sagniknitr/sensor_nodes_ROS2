@@ -1,0 +1,16 @@
+<package>
+  <description brief="random_numbers">
+
+     random_numbers
+
+  </description>
+  <author>Ioan Sucan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/random_numbers</url>
+
+  <export>
+    <cpp cflags="`pkg-config --cflags random_numbers`" lflags="`pkg-config --libs random_numbers`"/>
+  </export>
+
+</package>
