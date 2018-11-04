@@ -55,7 +55,7 @@ extern "C"
 #include <string>
 #include <sstream>
 
-#include <sensor_msgs/Image.h>
+#include <sensor_msgs/msg/image.hpp>
 
 namespace usb_cam {
 
@@ -68,7 +68,8 @@ class UsbCam {
 
   typedef enum
   {
-    PIXEL_FORMAT_YUYV, PIXEL_FORMAT_UYVY, PIXEL_FORMAT_MJPEG, PIXEL_FORMAT_YUVMONO10, PIXEL_FORMAT_RGB24, PIXEL_FORMAT_GREY, PIXEL_FORMAT_UNKNOWN
+    PIXEL_FORMAT_YUYV, PIXEL_FORMAT_UYVY, PIXEL_FORMAT_MJPEG, PIXEL_FORMAT_YUVMONO10,
+     PIXEL_FORMAT_RGB24, PIXEL_FORMAT_GREY, PIXEL_FORMAT_UNKNOWN
   } pixel_format;
 
   UsbCam();
@@ -81,7 +82,7 @@ class UsbCam {
   void shutdown(void);
 
   // grabs a new image from the camera
-  void grab_image(sensor_msgs::Image* image);
+  void grab_image(sensor_msgs::msg::Image::SharedPtr image);
 
   // enables/disable auto focus
   void set_auto_focus(int value);
@@ -118,7 +119,7 @@ class UsbCam {
   int init_mjpeg_decoder(int image_width, int image_height);
   void mjpeg2rgb(char *MJPEG, int len, char *RGB, int NumPixels);
   void process_image(const void * src, int len, camera_image_t *dest);
-  int read_frame();
+  int read_frame(void);
   void uninit_device(void);
   void init_read(unsigned int buffer_size);
   void init_mmap(void);
@@ -126,7 +127,7 @@ class UsbCam {
   void init_device(int image_width, int image_height, int framerate);
   void close_device(void);
   void open_device(void);
-  void grab_image();
+  void grab_image(void);
   bool is_capturing_;
 
 
