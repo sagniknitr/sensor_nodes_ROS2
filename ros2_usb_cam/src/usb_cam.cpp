@@ -48,11 +48,11 @@
 #include <sys/mman.h>
 #include <sys/ioctl.h>
 
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 #include <boost/lexical_cast.hpp>
-#include <sensor_msgs/fill_image.h>
+#include <sensor_msgs/fill_image.hpp>
 
-#include <usb_cam/usb_cam.h>
+#include <usb_cam/usb_cam.hpp>
 
 #define CLEAR(x) memset (&(x), 0, sizeof (x))
 
